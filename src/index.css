@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dy-red-700: #B91C3C;
+  --dy-red-600: #E11D48;
+  --dy-red-500: #B85454;
+  --dy-charcoal: #494A4B;
+  --dy-gray-200: #D9D8CF;
+  --dy-gray-400: #999793;
+  --dy-offwhite: #FFF7E3;
+  --dy-white: #FFFFFF;
+  
+  /* shadcn color variables */
+  --border: 214.3 31.8% 91.4%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    transform: scale(0.67);
+    transform-origin: top left;
+    width: 149.25%; /* Compensate for scale: 100% / 0.67 */
+    min-height: 149.25%; /* Compensate for scale: 100% / 0.67 */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  .font-montserrat {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--dy-red-700)] text-white font-medium px-6 py-3 rounded-xl 
+           hover:bg-[var(--dy-red-600)] transform hover:scale-[1.02] 
+           transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-[var(--dy-charcoal)] text-[var(--dy-charcoal)] 
+           font-medium px-6 py-3 rounded-xl hover:bg-[var(--dy-charcoal)] 
+           hover:text-white transition-all duration-200;
+  }
+  
+  .diagonal-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .diagonal-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--dy-red-700);
+    opacity: 0.88;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+    z-index: 1;
+  }
+  
+  .diagonal-overlay-reverse::before {
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  .card-hover {
+    @apply transform transition-all duration-200 hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .faq-item[open] summary {
+    @apply bg-gray-50;
+  }
+  
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .faq-item summary::marker {
+    content: '';
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transform,
+  .transition-all,
+  .card-hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #home .relative.z-10 {
+    transform: scale(1.15);
+    transform-origin: center top;
+    padding-top: 2rem;
+  }
+}
