@@ -53,8 +53,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
         <div className="text-center max-w-4xl w-full">
           {/* Animated Title */}
           <div className="mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-montserrat font-bold text-white leading-tight text-center">
-              <span className="block mb-2 px-2">Building Timeless Spaces</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-montserrat font-bold text-white leading-tight text-center">
+              <span className="block mb-4 px-4">Building Timeless Spaces</span>
               <span className="relative flex items-center justify-center overflow-hidden min-h-[1.2em] w-full px-2">
                 {titles.map((title, index) => (
                   <motion.span
@@ -86,11 +86,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
             </h1>
           </div>
           
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[var(--dy-offwhite)] mb-8 font-light leading-relaxed max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto text-center px-4">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[var(--dy-offwhite)] mb-12 font-light leading-relaxed max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto text-center px-6">
             "Over 10 years of excellence in residential, commercial & interior construction."
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 mb-16 justify-center items-center px-4">
+          <div className="flex flex-col sm:flex-row gap-6 mb-20 justify-center items-center px-6">
             <Button
               onClick={onRequestQuote}
               size="lg"
@@ -113,17 +113,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
 
           {/* Trust Bar */}
           <motion.div 
-            className="border-t border-white/20 pt-8 text-center w-full px-4"
+            className="border-t border-white/20 pt-12 text-center w-full px-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            <p className="text-[var(--dy-offwhite)] text-xs sm:text-sm mb-6 font-medium text-center">
+            <p className="text-[var(--dy-offwhite)] text-sm sm:text-base mb-8 font-medium text-center">
               TRUSTED BY INDUSTRY LEADERS
             </p>
-            <div className="overflow-hidden whitespace-nowrap w-full mb-8">
+            <div className="overflow-hidden whitespace-nowrap w-full mb-12">
               <motion.div
-                className="flex items-center gap-6 sm:gap-8 md:gap-10"
+                className="flex items-center gap-8 sm:gap-10 md:gap-12"
                 animate={{ x: [-1000, 0] }}
                 transition={{
                   x: {
@@ -138,9 +138,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
                 {trustLogos.map((logo, index) => (
                   <div
                     key={`first-${logo}`}
-                    className="text-white/70 font-montserrat font-semibold text-sm sm:text-base md:text-lg 
+                    className="text-white/70 font-montserrat font-semibold text-base sm:text-lg md:text-xl 
                              hover:text-white transition-colors duration-200 cursor-pointer
-                             flex-shrink-0 px-3 sm:px-4 md:px-6"
+                             flex-shrink-0 px-4 sm:px-6 md:px-8"
                   >
                     {logo}
                   </div>
@@ -149,9 +149,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onRequestQuote }) => {
                 {trustLogos.map((logo, index) => (
                   <div
                     key={`second-${logo}`}
-                    className="text-white/70 font-montserrat font-semibold text-sm sm:text-base md:text-lg 
+                    className="text-white/70 font-montserrat font-semibold text-base sm:text-lg md:text-xl 
                              hover:text-white transition-colors duration-200 cursor-pointer
-                             flex-shrink-0 px-3 sm:px-4 md:px-6"
+                             flex-shrink-0 px-4 sm:px-6 md:px-8"
                   >
                     {logo}
                   </div>

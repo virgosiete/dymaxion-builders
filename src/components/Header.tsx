@@ -42,12 +42,12 @@ const Header: React.FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-6 lg:space-x-8">
+            <nav className="hidden lg:flex space-x-6 xl:space-x-8">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-lg px-3 py-2 text-[var(--dy-charcoal)] hover:text-[var(--dy-red-700)] 
+                  className="text-base xl:text-lg px-3 py-2 text-[var(--dy-charcoal)] hover:text-[var(--dy-red-700)] 
                            font-medium transition-colors duration-200 whitespace-nowrap rounded-lg
                            hover:bg-gray-50"
                 >
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
             {/* Spacer to push mobile menu to the right */}
             <div className="flex-1"></div>
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 rounded-md text-[var(--dy-charcoal)] hover:text-[var(--dy-red-700)]"
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
               {navigation.map((item) => (
                 <a
